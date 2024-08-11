@@ -65,11 +65,10 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Integer multiplication(Integer a, Integer b) {
         if ( a == null || b == null) {
-        return null; // Replace null with the variable you used to store the result
+        return null;
     }
-     return a * b;
-
-}
+     return a*b;
+    }
 
     /**
      * Question 4
@@ -81,7 +80,10 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient of the division, or 0 if the denominator is zero.
      */
     public static Decimal division(Integer a, Integer b) {
-        return null; // Replace null with the variable you used to store the result
+        if ( b == 0) {
+            return Decimal.valueOf(0);
+        } 
+        return Decimal.valueOf(a) / Decimal.valueOf(b); 
     }
 
     /**
@@ -95,7 +97,12 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        return null; // Replace null with the variable you used to store the result
+        if (Math.mod(num,2) == 0) {
+            return true;
+        } else {
+            return false;
+        }
+      } 
     }
 
     /**
