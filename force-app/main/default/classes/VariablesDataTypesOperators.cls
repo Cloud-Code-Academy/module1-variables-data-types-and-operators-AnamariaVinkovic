@@ -18,7 +18,7 @@
  * If statements are not specifically covered in the lesson this module, but review module 2 flow control section for an overview if needed.
  * Resources: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_if_else.htm 
  * 
- * @author Your Name
+ * @author Anamaria Vinkovic
  */
 
 public with sharing class VariablesDataTypesOperators {
@@ -27,13 +27,17 @@ public with sharing class VariablesDataTypesOperators {
      * Performs addition of two numbers.
      * If either of the numbers is null, return null.
      * Example: addition(1, 2) should return 3
-     * @param a The first number.
-     * @param b The second number.
-     * @return The sum of the two numbers, or null if either number is null.
+     * @param a 
+     * @param b 
+     * @return 
      */
     public static Integer addition(Integer a, Integer b) {  
-        return null; // Replace null with the variable you used to store the result
+        if ( a == null || b == null) {
+        return null; 
     }
+    return a + b;
+}
+
 
     /**
      * Question 2
