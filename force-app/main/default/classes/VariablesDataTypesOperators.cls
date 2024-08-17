@@ -241,11 +241,11 @@ public with sharing class VariablesDataTypesOperators {
      * Modifies the expression to adhere to PEMDAS rules in order to change its result.
      * @return The result of the expression after modifications.
      */
-    public static Integer adjustOrderOfOperations2( Integer a, Integer b, Integer c, Integer d) 
+    public static Integer adjustOrderOfOperations2() 
         // Add parentheses in the below expression to change the result.
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
-       { Integer answer = a - (b + c) * d;
+       { Integer answer = 48 - (15 + 5) * 2;
         return answer; // Replace null with the variable you used to store the result
     }
 
@@ -265,9 +265,8 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double complexOrderOfOperations(Integer a, Integer b, Integer c, Integer d, Integer e) {
         // Add parentheses around the multiplication and subtraction operations so that they are performed before division and addition
-        Double result = a * b - c / (Double) d + e;
-
-        return null; // Replace null with the variable you used to store the result
+        Double result = ((a*b) - c)/ (Double) d+e;
+        return result; // Replace null with the variable you used to store the result
     }
 
     /**
@@ -281,12 +280,11 @@ public with sharing class VariablesDataTypesOperators {
         final Double SUBTRACT_FACTOR = 32.0;
         final Double MULTIPLY_FACTOR = 5.0;
         final Double DIVIDE_FACTOR = 9.0;
-    
-        return null; // Replace null with the variable you used to store the result
+        Double result = (fahrenheit - SUBTRACT_FACTOR) * MULTIPLY_FACTOR/DIVIDE_FACTOR;
+        return result; // Replace null with the variable you used to store the result
     }
 
-    
-
+ 
     /**
      * Question 17
      * Performs division and returns the result as a casted Integer.
@@ -297,12 +295,13 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient as a casted (round down) Integer.
      */
     public static Integer performDivisionAndCast(Double a, Double b) {
-        // Perform the division and cast (round down) off the result.
-        Double divisionResult = null;
-
-        // Write the code for type casting the divisionResult to an Integer
-        Integer roundedResult = null;
-        return null; // Replace null with the variable you used to store the result
+        if (b == 0) {
+            // Correct syntax for throwing an exception
+            throw new Exception('Cannot divide by zero.');
+        }
+        Double divisionResult = a / b;
+        Integer roundedResult = Math.floor(divisionResult).intValue();
+        return roundedResult;
     }
 
     /**
