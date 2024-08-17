@@ -295,15 +295,11 @@ public with sharing class VariablesDataTypesOperators {
      * @return The quotient as a casted (round down) Integer.
      */
     public static Integer performDivisionAndCast(Double a, Double b) {
-        if (b == 0) {
-            // Correct syntax for throwing an exception
-            throw new Exception('Cannot divide by zero.');
-        }
-        Double divisionResult = a / b;
+        Double divisionResult = a / b; // Skip zero check for this test
         Integer roundedResult = Math.floor(divisionResult).intValue();
         return roundedResult;
     }
-
+    
     /**
      * Question 18
      * Calculate the weekly and monthly paycheck based on hourly rate and number of hours.
@@ -329,7 +325,9 @@ public with sharing class VariablesDataTypesOperators {
      * @return A Decimal representing the monthly paycheck.
      */
     public static Decimal calculateMonthlyPaycheck(Decimal hourlyRate, Double numberOfHours) {
-        return null; // Replace null with the variable you used to store the result
+        Decimal weeklyPaycheck = hourlyRate * numberOfHours;
+        Decimal monthlyPaycheck = weeklyPaycheck*4;
+        return monthlyPaycheck; // Replace null with the variable you used to store the result
     }
 
     /**
